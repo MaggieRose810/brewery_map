@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406192640) do
+ActiveRecord::Schema.define(version: 20170406203702) do
+
+  create_table "breweries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean  "is_organic"
+    t.string   "website"
+    t.string   "status"
+    t.string   "ext_id",                       null: false
+    t.text     "description",    limit: 65535
+    t.string   "status_display"
+    t.string   "name"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["ext_id"], name: "index_breweries_on_ext_id", unique: true, using: :btree
+  end
 
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "status"

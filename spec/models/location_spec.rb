@@ -5,4 +5,6 @@ RSpec.describe Location, type: :model do
   it { is_expected.to validate_presence_of(:ext_id) }
   it { is_expected.to validate_presence_of(:brewery_ext_id) }
   it { is_expected.to validate_uniqueness_of(:ext_id) }
+  it { is_expected.to belong_to(:brewery) }
 end
+
