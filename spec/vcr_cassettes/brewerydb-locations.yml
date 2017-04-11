@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.brewerydb.com/v2/locations?key=abc123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.brewerydb.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 11 Apr 2017 16:13:48 GMT
+      Server:
+      - Apache/2.4.23 (Amazon) OpenSSL/1.0.1k-fips PHP/5.5.38
+      Vary:
+      - Accept-Encoding,User-Agent
+      X-Powered-By:
+      - PHP/5.5.38
+      X-Ratelimit-Limit:
+      - Unlimited
+      X-Ratelimit-Remaining:
+      - Unlimited
+      Content-Length:
+      - '18426'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"currentPage":1,"numberOfPages":191,"totalResults":9501,"data":[{"id":"4XTqCU","name":"127
+        Brewing","streetAddress":"3090 Shirley Drive","locality":"Jackson","region":"Michigan","postalCode":"49201","phone":"(517)
+        258-1346","website":"https:\/\/www.facebook.com\/127brewing","latitude":42.2860115,"longitude":-84.4312613,"isPrimary":"Y","inPlanning":"N","isClosed":"N","openToPublic":"Y","locationType":"micro","locationTypeDisplay":"Micro
+        Brewery","countryIsoCode":"US","yearOpened":"2014","status":"verified","statusDisplay":"Verified","createDate":"2014-09-03
+        13:47:01","updateDate":"2015-12-03 19:03:25","breweryId":"9oltPu","brewery":{"id":"9oltPu","name":"127
+        Brewing","nameShortDisplay":"127","website":"https:\/\/www.facebook.com\/127brewing","established":"2014","isOrganic":"N","images":{"icon":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/9oltPu\/upload_7fLGbX-icon.png","medium":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/9oltPu\/upload_7fLGbX-medium.png","large":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/9oltPu\/upload_7fLGbX-large.png","squareMedium":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/9oltPu\/upload_7fLGbX-squareMedium.png","squareLarge":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/9oltPu\/upload_7fLGbX-squareLarge.png"},"status":"verified","statusDisplay":"Verified","createDate":"2014-09-03
+        13:45:00","updateDate":"2015-12-22 15:58:22"},"country":{"isoCode":"US","name":"UNITED
+        STATES","displayName":"United States","isoThree":"USA","numberCode":840,"createDate":"2012-01-03
+        02:41:33"}},{"id":"OaZYgf","name":"16th Street Tavern","streetAddress":"915
+        16th St","locality":"Greeley","region":"Colorado","postalCode":"80631","phone":"9705843551","website":"http:\/\/www.grandlakebrewing.com","hoursOfOperation":"Sunday-Thurs
+        11 am-10pm\r\n\r\nFriday 11 am-1130pm\r\n\r\nSat 11 am-1130pm","latitude":40.4139425,"longitude":-104.6937039,"isPrimary":"Y","inPlanning":"N","isClosed":"Y","openToPublic":"N","locationType":"micro","locationTypeDisplay":"Micro
+        Brewery","countryIsoCode":"US","status":"verified","statusDisplay":"Verified","createDate":"2012-01-03
+        02:41:56","updateDate":"2016-01-13 16:41:41","breweryId":"sJqs5o","brewery":{"id":"sJqs5o","name":"Grand
+        Lake Brewing Company","nameShortDisplay":"Grand Lake","website":"http:\/\/www.grandlakebrewing.com\/","isOrganic":"N","status":"verified","statusDisplay":"Verified","createDate":"2012-01-03
+        02:41:56","updateDate":"2016-01-13 16:41:50"},"country":{"isoCode":"US","name":"UNITED
+        STATES","displayName":"United States","isoThree":"USA","numberCode":840,"createDate":"2012-01-03
+        02:41:33"}},{"id":"eDYckD","name":"4 Seasons Brewery","streetAddress":"303
+        W. Nepessing St.","locality":"Lapeer","region":"Michigan","postalCode":"48846","website":"http:\/\/www.4seasonsbeer.com\/","latitude":43.0541724,"longitude":-83.3116716,"isPrimary":"Y","inPlanning":"Y","isClosed":"N","openToPublic":"N","locationType":"micro","locationTypeDisplay":"Micro
+        Brewery","countryIsoCode":"US","status":"verified","statusDisplay":"Verified","createDate":"2014-09-13
+        02:06:40","updateDate":"2015-12-03 15:55:11","breweryId":"UrP3el","brewery":{"id":"UrP3el","name":"4
+        Seasons Brewery","nameShortDisplay":"4 Seasons","description":"Coming January
+        2015","website":"http:\/\/www.4seasonsbeer.com\/","established":"2014","isOrganic":"N","images":{"icon":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/UrP3el\/upload_z6px5X-icon.png","medium":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/UrP3el\/upload_z6px5X-medium.png","large":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/UrP3el\/upload_z6px5X-large.png","squareMedium":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/UrP3el\/upload_z6px5X-squareMedium.png","squareLarge":"https:\/\/s3.amazonaws.com\/brewerydbapi\/brewery\/UrP3el\/upload_z6px5X-squareLarge.png"},"status":"verified","statusDisplay":"Verified","createDate":"2014-09-13
+        02:03:54","updateDate":"2015-12-22 15:58:47"},"country":{"isoCode":"US","name":"UNITED
+        STATES","displayName":"United States","isoThree":"USA","numberCode":840,"createDate":"2012-01-03
+        02:41:33"}}],"status":"success"}'
+    http_version:
+  recorded_at: Tue, 11 Apr 2017 16:13:49 GMT
+recorded_with: VCR 3.0.3
