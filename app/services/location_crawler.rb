@@ -37,5 +37,8 @@ class LocationCrawler
 
   def locations
     @locations ||= Brewerydb::Location.index
+  rescue Brewerydb::HTTPResponseError => e
+    Rails.logger.fatal "#{e.message} - #{e.code} - #{e.response.body}"
+    raise e
   end
 end
