@@ -22,21 +22,20 @@ const getLocation = (map) => {
 const loadLocations = (map) => {
   axios.get('/api/v1/locations')
   .then( (response) => {
-    let positions = response.data.map((location) => {
+    let positions = response.data.map((item) => {
       return {
-        lat: parseFloat(location.latitude),
-        lng: parseFloat(location.longitude)
+        lat: parseFloat(item.location.lat),
+        lng: parseFloat(item.location.lon)
       }
     })
     addMarkers(positions, map)
   })
   .catch( (error) => {
-    console.log(error);
+    console.error(error);
   });
 }
 
 const addMarkers = (positions, map) => {
-  console.log(positions)
   positions.forEach((position)=> {
     new google.maps.Marker({
       position,
