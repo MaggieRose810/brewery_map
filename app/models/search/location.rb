@@ -71,6 +71,26 @@ class Search::Location < Elasticity::Document
     end
   end
 
+  def self.geo_search(top_right:, bottom_left:)
+    search({
+      query: {
+        bool: {
+          must: {
+            match_all: {}
+          },
+          filter: {
+            geo_bounding_box: {
+              location: {
+                top_right: top_right,
+                bottom_left: bottom_left
+              }
+            }
+          }
+        }
+      }
+    })
+  end
+
   def self.from_active_record(record)
     attributes = record.attributes
     latitude = attributes.delete('latitude')
