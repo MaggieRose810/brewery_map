@@ -5,6 +5,18 @@ const initMap = () => {
     center: position
   });
   loadLocations(map)
+  getLocation(map)
+}
+
+const getLocation = (map) => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      map.setCenter({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      })
+    })
+  }
 }
 
 const loadLocations = (map) => {
