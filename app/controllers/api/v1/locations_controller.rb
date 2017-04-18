@@ -7,8 +7,30 @@ class Api::V1::LocationsController < ApplicationController
 
   def search_params
     {
-      top_right: params[:top_right].permit(:lat, :lon).to_h,
-      bottom_left: params[:bottom_left].permit(:lat, :lon).to_h
+      top_right: top_right,
+      bottom_left: bottom_left
     }
+  end
+
+  def top_right
+    if params[:top_right]
+      params[:top_right].permit(:lat, :lon).to_h
+    else
+      {
+        lat: 46.595327,
+        lon: -68.400200
+      }
+    end
+  end
+
+  def bottom_left
+    if params[:bottom_left]
+       params[:bottom_left].permit(:lat, :lon).to_h
+    else
+      {
+        lat: 25.252938,
+        lon: -127.462699
+      }
+    end
   end
 end
