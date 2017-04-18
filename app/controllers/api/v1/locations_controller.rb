@@ -1,6 +1,8 @@
 class Api::V1::LocationsController < ApplicationController
   def index
     @locations = Search::Location.geo_search(search_params)
+    brewery_ids = @locations.map(&:brewery_ext_id)
+    @breweries = Brewery.where(ext_id: brewery_ids).index_by(&:ext_id)
   end
 
   private

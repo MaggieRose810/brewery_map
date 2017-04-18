@@ -1,5 +1,5 @@
-json.array! @locations,
-  :id,
+json.array! @locations do |location|
+    json.extract!(location,   :id,
   :status,
   :region,
   :location,
@@ -14,4 +14,6 @@ json.array! @locations,
   :locality,
   :street_address,
   :created_at,
-  :updated_at
+  :updated_at)
+    json.brewery(@breweries[location.brewery_ext_id])
+  end
