@@ -24,13 +24,7 @@ const getLocation = (map) => {
 const loadLocations = (map) => {
   axios.get(`/api/v1/locations?${buildQuery(map)}`)
   .then( (response) => {
-    let positions = response.data.map((item) => {
-      return {
-        lat: parseFloat(item.location.lat),
-        lng: parseFloat(item.location.lon)
-      }
-    })
-    addMarkers(positions, map)
+    addMarkers(response.data, map)
   })
   .catch( (error) => {
     console.error(error);
@@ -54,11 +48,32 @@ const buildQuery = (map) => {
   })
 }
 
-const addMarkers = (positions, map) => {
-  positions.forEach((position)=> {
-    new google.maps.Marker({
+const addMarkers = (locations, map) => {
+  locations.forEach((item)=> {
+    let position = {
+        lat: parseFloat(item.location.lat),
+        lng: parseFloat(item.location.lon)
+      }
+    let marker = new google.maps.Marker({
       position,
       map
     });
+    buildInfoWindow(map, marker, item)
   })
+}
+const buildInfoWindow = (map, marker, location) => {
+  var contentString = `<div itemscope itemtype="http://schema.org/LocalBusiness">
+  <h2 class="brewery_name">${location.name}</h2>
+  <a href="${location.website}" target="_blank">Website</a>
+  <span itemprop="telephone">${location.phone || ''}</span>
+  <p>${location.brewery.description || ''}</p>
+  </div>`;
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
 }
