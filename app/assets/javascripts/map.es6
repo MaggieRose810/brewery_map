@@ -58,11 +58,12 @@ const addMarkers = (locations, map) => {
 }
 
 const buildInfoWindow = (map, marker, location) => {
-  var contentString = `<div itemscope itemtype="http://schema.org/LocalBusiness">
-  <h2 class="brewery_name">${location.brewery.name}</h2>
-  <a href="${location.website}" target="_blank">Website</a>
-  <span itemprop="telephone">${location.phone || ''}</span>
-  <p>${location.brewery.description || ''}</p>
+  var contentString = `
+    <div itemscope itemtype="http://schema.org/LocalBusiness">
+      <h2 class="brewery_name">${location.brewery.name}</h2>
+      <a href="${location.website}" target="_blank">Website</a>
+      <span itemprop="telephone">${location.phone || ''}</span>
+      <p>${location.brewery.description || ''}</p>
   </div>`;
 
   var infowindow = new google.maps.InfoWindow({
