@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.brewerydb.com/v2/locations?key=abc123
+    uri: http://api.brewerydb.com/v2/locations?key=abc123&p=1
     body:
       encoding: US-ASCII
       string: ''
