@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: {format: 'json'} do
       resources :locations, only: [:index]
+      resources :beers, only: [:index]
     end
   end
 end

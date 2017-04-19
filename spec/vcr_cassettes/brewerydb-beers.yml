@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.brewerydb.com/v2/brewery/sJqs5o/beers?key=abc123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.brewerydb.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 19 Apr 2017 14:08:34 GMT
+      Server:
+      - Apache/2.4.23 (Amazon) OpenSSL/1.0.1k-fips PHP/5.5.38
+      Vary:
+      - Accept-Encoding,User-Agent
+      X-Powered-By:
+      - PHP/5.5.38
+      X-Ratelimit-Limit:
+      - Unlimited
+      X-Ratelimit-Remaining:
+      - Unlimited
+      Content-Length:
+      - '1223'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Request Successful","data":[{"id":"iBzEfC","name":"Plaid
+        Bastard","nameDisplay":"Plaid Bastard","description":"Our strong Scotch Ale
+        is full bodied with notes of dark fruit.  We serve this premium brew in a
+        snifter to accentuate the brandy-like nose for your maximum enjoyment.","abv":"8","ibu":"7","styleId":14,"isOrganic":"N","status":"verified","statusDisplay":"Verified","createDate":"2012-01-03
+        02:43:58","updateDate":"2015-01-21 18:40:46","style":{"id":14,"categoryId":1,"category":{"id":1,"name":"British
+        Origin Ales","createDate":"2012-03-21 20:06:45"},"name":"Strong Ale","shortName":"Strong
+        Ale","description":"Light amber to mid-range brown in color, strong ales are
+        medium to full bodied with a malty sweetness and may have low levels of roast
+        malt character. Hop aroma should be minimal and flavor can vary from none
+        to medium in character intensity. Fruity-ester flavors and aromas can contribute
+        to the character of this ale. Bitterness should be minimal but evident and
+        balanced with malt and\/or caramel-like sweetness. Alcohol types can be varied
+        and complex. A rich, often sweet and complex estery character may be evident.
+        Very low levels of diacetyl are acceptable. Chill haze is acceptable at low
+        temperatures. (This style may often be split into two categories, strong and
+        very strong.)","ibuMin":"30","ibuMax":"65","abvMin":"7","abvMax":"11","srmMin":"8","srmMax":"21","ogMin":"1.06","fgMin":"1.014","fgMax":"1.04","createDate":"2012-03-21
+        20:06:45","updateDate":"2015-04-07 15:21:05"}},{"id":"6ePiEP","name":"Wooly
+        Booger Nut Brown Ale","nameDisplay":"Wooly Booger Nut Brown Ale","description":"Our
+        English brown ale. A mild bodied beer that is dark in color, while at the
+        same time full of flavor. A wonderfully drinkable beer, with slight toffee,
+        nutty and caramel flavors.  Let the honey-like malt flavor lure you in!","abv":"5","ibu":"4","glasswareId":5,"styleId":12,"isOrganic":"N","status":"verified","statusDisplay":"Verified","createDate":"2014-06-30
+        21:20:31","updateDate":"2014-10-09 14:41:57","glass":{"id":5,"name":"Pint","createDate":"2012-01-03
+        02:41:33"},"style":{"id":12,"categoryId":1,"category":{"id":1,"name":"British
+        Origin Ales","createDate":"2012-03-21 20:06:45"},"name":"English-Style Brown
+        Ale","shortName":"English Brown","description":"English brown ales range from
+        copper to brown in color. They have medium body and range from dry to sweet
+        maltiness with very little hop flavor or aroma. Roast malt tones may sometimes
+        contribute to the flavor and aroma profile. Low to medium-low levels of fruity-ester
+        flavors are appropriate. Diacetyl should be very low, if evident. Chill haze
+        is allowable at cold temperatures.","ibuMin":"15","ibuMax":"25","abvMin":"4","abvMax":"5.5","srmMin":"13","srmMax":"25","ogMin":"1.04","fgMin":"1.008","fgMax":"1.014","createDate":"2012-03-21
+        20:06:45","updateDate":"2015-04-07 15:20:51"}}],"status":"success"}'
+    http_version:
+  recorded_at: Wed, 19 Apr 2017 14:08:35 GMT
+recorded_with: VCR 3.0.3

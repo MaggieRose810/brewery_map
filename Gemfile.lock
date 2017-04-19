@@ -45,7 +45,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    brewerydb-client (0.0.2)
+    brewerydb-client (0.0.3)
       activesupport (>= 4.0.0, < 6)
       recursive-open-struct
     builder (3.2.3)
