@@ -1,5 +1,13 @@
 class LocationCrawler
 
+  def initialize(page: 1)
+    @page = page
+  end
+
+  def number_of_pages
+    locations.number_of_pages
+  end
+
   def call
     locations.each do|location|
       brewery = Brewery.find_or_initialize_by(ext_id: location.brewery.id) do |b|
@@ -36,7 +44,7 @@ class LocationCrawler
   private
 
   def locations
-    @locations ||= Brewerydb::Location.index
+    @locations ||= Brewerydb::Location.index(p: @page)
   rescue Brewerydb::HTTPResponseError => e
     Rails.logger.fatal "#{e.message} - #{e.code} - #{e.response.body}"
     raise e
