@@ -4,6 +4,7 @@ h1, h3, h4 {
 
 .brewery_name{
   font-size: 1.5em;
+  text-align: center;
 }
 
 #map {
@@ -19,5 +20,17 @@ h1, h3, h4 {
   padding-right: .2em;
   dt {
     font-weight: bold;
+  }
+}
+
+@media (max-width: 600px) {
+  #map {
+    width: 100%;
+    height: 500px;
+  }
+
+  #beers {
+    width: 100%;
+    float: clear;
   }
 }
