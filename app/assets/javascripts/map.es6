@@ -70,6 +70,7 @@ const buildInfoWindow = (map, marker, location) => {
   });
 
   marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
+    infowindow.open(map, marker);
+    brewerySelected(location.brewery)
+  });
 }

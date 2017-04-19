@@ -1,11 +1,23 @@
-h1 {
+h1, h3, h4 {
   text-align: center;
 }
+
 .brewery_name{
   font-size: 1.5em;
 }
 
 #map {
+  float: left;
   height: 700px;
-  width: 100%;
+  width: 65%;
+}
+
+#beers {
+  float: left;
+  width: 35%;
+  padding-left: .2em;
+  padding-right: .2em;
+  dt {
+    font-weight: bold;
+  }
 }
