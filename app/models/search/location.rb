@@ -73,11 +73,18 @@ class Search::Location < Elasticity::Document
 
   def self.geo_search(top_right:, bottom_left:)
     search({
+      size: 25,
       query: {
         bool: {
           must: {
             match_all: {}
           },
+          should: [
+            { exists: { field: "website"} },
+            { exists: { field: "phone"} },
+            { exists: { field: "postal_code"} },
+            { exists: { field: "street_address"} }
+          ],
           filter: {
             geo_bounding_box: {
               location: {
