@@ -18,7 +18,7 @@ const render = (brewery, beers) => {
     <hr>`
   }).join('')
   $('#beers').html(`
-    <h3>Beers on Tap</h3>
+    <h3>Beers on Tap @ ${brewery.name}</h3>
     <div>${beersHtml}</div>
   `)
 }
