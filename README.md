@@ -1,24 +1,16 @@
-# README
+# Brewery Map
+[Website](http://www.tapsonmap.com)
+This site searches for breweries from a map bounding box and displays listed beers on tap when the user clicks brewery marker on the map
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Development Setup
+For OSX Users using HomeBrew
 
-Things you may want to cover:
+```
+    brew install mysql
+    brew install redis
+    brew install elasticsearch
+```
+`bin/setup`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Running Tests
+`bundle exec rspec`
