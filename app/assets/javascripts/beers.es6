@@ -17,6 +17,8 @@ const render = (brewery, beers) => {
     <dd>${beer.ibu || ''}</dd>
     <dt>Style</dt>
     <dd>${beer.style && beer.style.category.name || ''}</dd>
+    <i class="icon-thumbs-up"></i>
+    <i class="icon-thumbs-down"></i>
     <hr>`
   }).join('')
   $('#beers').html(`
