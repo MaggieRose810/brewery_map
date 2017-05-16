@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406203702) do
+ActiveRecord::Schema.define(version: 20170516131249) do
 
   create_table "breweries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "is_organic"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20170406203702) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["ext_id"], name: "index_breweries_on_ext_id", unique: true, using: :btree
+  end
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean  "positive",    null: false
+    t.string   "user_uuid",   null: false
+    t.string   "beer_ext_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
