@@ -9,12 +9,16 @@ const likeClicked = (e) => {
     positive: true,
     beer_ext_id: e.target.dataset.beerExtId
   })
+  e.target.innerHTML = `(${parseInt(e.target.dataset.likeCount) + 1})`
+  $(e.target).addClass('blue')
 }
 const dislikeClicked = (e) => {
   createLike({
     positive: false,
     beer_ext_id: e.target.dataset.beerExtId
   })
+  e.target.innerHTML = `(${parseInt(e.target.dataset.dislikeCount) + 1})`
+  $(e.target).addClass('blue')
 }
 const render = (brewery, beers) => {
   let beersHtml = beers.map((beer) => {
@@ -28,14 +32,23 @@ const render = (brewery, beers) => {
     <dd>${beer.ibu || ''}</dd>
     <dt>Style</dt>
     <dd>${beer.style && beer.style.category.name || ''}</dd>
-    <i class="icon-thumbs-up" data-beer-ext-id=${beer.id}></i>
-    <i class="icon-thumbs-down" data-beer-ext-id=${beer.id}></i>
+    <i class="icon-thumbs-up"
+      data-beer-ext-id=${beer.id}
+      data-like-count=${beer.like_count}>
+      (${beer.like_count})
+    </i>
+    <i class="icon-thumbs-down"
+      data-beer-ext-id=${beer.id}
+      data-dislike-count=${beer.dislike_count}>
+      (${beer.dislike_count})
+    </i>
     <hr>`
   }).join('')
   $('#beers').html(`
     <h3>Beers on Tap @ ${brewery.name}</h3>
     <div>${beersHtml}</div>
   `)
+
   $('.icon-thumbs-up').on('click', likeClicked)
   $('.icon-thumbs-down').on('click', dislikeClicked)
 }
