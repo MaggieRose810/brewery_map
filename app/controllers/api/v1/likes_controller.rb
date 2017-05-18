@@ -12,6 +12,6 @@ class Api::V1::LikesController < ApplicationController
   private
 
   def like_params
-    params.require(:like).permit(:positive, :user_uuid, :beer_ext_id)
+    params.require(:like).permit(:positive, :user_uuid, :beer_ext_id).to_h
   end
 end
