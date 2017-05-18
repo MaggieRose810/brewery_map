@@ -54,7 +54,32 @@ const addMarkers = (locations, map) => {
       map
     });
     buildInfoWindow(map, marker, item)
+    buildMouseEvent(map, marker, item)
   })
+}
+const buildMouseEvent = (map, marker, location) => {
+  var contentString = `
+    <div itemscope itemtype="http://schema.org/LocalBusiness">
+      <h2 class="brewery_name">${location.brewery.name}</h2>
+  </div>`;
+
+
+  var namewindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  marker.addListener('mouseover', function() {
+    namewindow.open(map, marker);
+  });
+
+  marker.addListener('mouseout', function() {
+    namewindow.close();
+  });
+
+  marker.addListener('click', function() {
+    namewindow.close();
+  });
+
 }
 
 const buildInfoWindow = (map, marker, location) => {
