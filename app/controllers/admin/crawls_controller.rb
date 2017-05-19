@@ -1,4 +1,8 @@
 class Admin::CrawlsController < ApplicationController
+  http_basic_authenticate_with(
+    name: ENV["SIDEKIQ_USERNAME"],
+    password: ENV["SIDEKIQ_PASSWORD"],
+    except: :index) if Rails.env.production?
 
   def new
     @crawl = Crawl.new
