@@ -13,4 +13,7 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+  namespace :admin do
+    resources :crawls
+  end
 end
