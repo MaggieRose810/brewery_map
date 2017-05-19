@@ -1,0 +1,7 @@
+<%= form_for [:admin, @crawl] do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <%= f.label "Endpoint" %>
+  <%= f.select :endpoint, options_for_select(endpoint_options, @crawl.endpoint), include_blank: true %>
+  <%= f.submit "Submit" %>
+<% end %>
