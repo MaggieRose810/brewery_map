@@ -8,7 +8,7 @@ describe 'Crawl Routes', type: :request do
     end
   end
 
-  describe  'GET /admin/crawls/new' do
+  describe 'GET /admin/crawls/new' do
     it "renders the page" do
       get('/admin/crawls/new')
       expect(response).to have_http_status(200)
@@ -17,6 +17,7 @@ describe 'Crawl Routes', type: :request do
 
   describe 'POST /admin/crawls' do
     it "renders the page" do
+      expect(CrawlLocationsJob).to receive(:perform_later)
       expect do
         post('/admin/crawls', params: {
           crawl: {

@@ -11,6 +11,7 @@ class Admin::CrawlsController < ApplicationController
   def create
     @crawl = Crawl.new(crawl_params)
     if @crawl.save
+      CrawlLocationsJob.perform_later
       redirect_to admin_crawl_path(@crawl)
     else
       render 'new'
