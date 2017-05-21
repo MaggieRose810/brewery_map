@@ -1,2 +1,7 @@
 <p><%= crawl.name %> requested a crawl of the brewerydb
-<%= crawl.endpoint %> API at <%= crawl.created_at %> </p>
+<%= crawl.endpoint %> API at <%= crawl.created_at %>
+<% if crawl.completed? %>
+  changing the locations count from <%= Location.created_before(crawl.created_at).count %> to <%= Location.created_before(crawl.completed_at).count %>, adding <%= Location.created_between(crawl.created_at, crawl.completed_at).count %> locations
+<% else %>
+crawl is pending
+<% end %>.</p>

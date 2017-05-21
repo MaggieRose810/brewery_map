@@ -3,5 +3,10 @@
   <%= f.text_field :name %>
   <%= f.label "Endpoint" %>
   <%= f.select :endpoint, options_for_select(endpoint_options, @crawl.endpoint), include_blank: true %>
+  <% if @crawl.persisted? %>
+    <%= f.label "Completed?" %>
+    <%= f.check_box :completed %>
+    <br>
+  <% end %>
   <%= f.submit "Submit" %>
 <% end %>

@@ -11,6 +11,7 @@ class Admin::CrawlsController < ApplicationController
   def create
     @crawl = Crawl.new(crawl_params)
     if @crawl.save
+      CrawlLocationsJob.perform_later(@crawl.id)
       redirect_to admin_crawl_path(@crawl)
     else
       render 'new'
@@ -47,6 +48,6 @@ class Admin::CrawlsController < ApplicationController
 
   private
   def crawl_params
-    params.require(:crawl).permit(:name, :endpoint)
+    params.require(:crawl).permit(:name, :endpoint, :completed)
   end
 end
