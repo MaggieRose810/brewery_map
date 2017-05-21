@@ -16,4 +16,8 @@ class Crawl < ApplicationRecord
       self.completed_at = nil
     end
   end
+
+  def completed?
+    completed
+  end
 end
