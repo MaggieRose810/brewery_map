@@ -48,6 +48,6 @@ class Admin::CrawlsController < ApplicationController
 
   private
   def crawl_params
-    params.require(:crawl).permit(:name, :endpoint)
+    params.require(:crawl).permit(:name, :endpoint, :completed)
   end
 end
