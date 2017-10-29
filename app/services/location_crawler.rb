@@ -11,7 +11,7 @@ class LocationCrawler
   def call
     locations.each do|location|
       brewery = Brewery.find_or_initialize_by(ext_id: location.brewery.id) do |b|
-        b.update_attributes(
+        b.assign_attributes(
           is_organic: location.brewery.is_organic,
           website: location.brewery.website,
           status: location.brewery.status,
@@ -19,6 +19,8 @@ class LocationCrawler
           status_display: location.brewery.status_display,
           name: location.brewery.name
         )
+        $kafka.deliver_message(b.to_json, topic: "breweries") if b.new_record?
+        b.save
       end
 
       Location.find_or_initialize_by(ext_id: location.id) do |l|
